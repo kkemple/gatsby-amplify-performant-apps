@@ -1,0 +1,112 @@
+type PostLike {
+  id: ID!
+  userId: String
+  postId: Int!
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelPostLikeConnection {
+  items: [PostLike]
+  nextToken: String
+}
+
+input ModelStringFilterInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+}
+
+input ModelIDFilterInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+}
+
+input ModelIntFilterInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  contains: Int
+  notContains: Int
+  between: [Int]
+}
+
+input ModelFloatFilterInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  contains: Float
+  notContains: Float
+  between: [Float]
+}
+
+input ModelBooleanFilterInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelPostLikeFilterInput {
+  id: ModelIDFilterInput
+  userId: ModelStringFilterInput
+  postId: ModelIntFilterInput
+  and: [ModelPostLikeFilterInput]
+  or: [ModelPostLikeFilterInput]
+  not: ModelPostLikeFilterInput
+}
+
+type Query {
+  getPostLike(id: ID!): PostLike
+  listPostLikes(filter: ModelPostLikeFilterInput, limit: Int, nextToken: String): ModelPostLikeConnection
+}
+
+input CreatePostLikeInput {
+  id: ID
+  userId: String
+  postId: Int!
+}
+
+input UpdatePostLikeInput {
+  id: ID!
+  userId: String
+  postId: Int
+}
+
+input DeletePostLikeInput {
+  id: ID
+}
+
+type Mutation {
+  createPostLike(input: CreatePostLikeInput!): PostLike
+  updatePostLike(input: UpdatePostLikeInput!): PostLike
+  deletePostLike(input: DeletePostLikeInput!): PostLike
+}
+
+type Subscription {
+  onCreatePostLike: PostLike @aws_subscribe(mutations: ["createPostLike"])
+  onUpdatePostLike: PostLike @aws_subscribe(mutations: ["updatePostLike"])
+  onDeletePostLike: PostLike @aws_subscribe(mutations: ["deletePostLike"])
+}

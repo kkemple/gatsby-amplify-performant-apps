@@ -1,0 +1,20 @@
+{
+    "projectName": "blog",
+    "projectPath": "/Users/kemplk/Projects/aws-gatsby-performant-apps-example/blog",
+    "defaultEditor": "code",
+    "frontendHandler": {
+        "javascript": "/Users/kemplk/.config/yarn/global/node_modules/amplify-frontend-javascript"
+    },
+    "javascript": {
+        "framework": "react",
+        "config": {
+            "SourceDir": "src",
+            "DistributionDir": "public",
+            "BuildCommand": "npm run build",
+            "StartCommand": "npm run start"
+        }
+    },
+    "providers": {
+        "awscloudformation": "/Users/kemplk/.config/yarn/global/node_modules/amplify-provider-awscloudformation"
+    }
+}

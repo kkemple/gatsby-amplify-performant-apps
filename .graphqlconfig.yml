@@ -1,0 +1,16 @@
+projects:
+  amplifygatsbyexample:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/**/*.js
+    excludes:
+      - amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: javascript
+        generatedFileName: ''
+        docsFilePath: src/graphql
+        graphQLApiId: hd4qittytnghrg5nkhrjq4tbxq
+      endpoints:
+        prod: >-
+          https://hgno7he6gjerhgdkzgucve63kq.appsync-api.us-east-1.amazonaws.com/graphql

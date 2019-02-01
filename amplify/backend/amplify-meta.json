@@ -1,0 +1,56 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "blog-20190130130837-authRole",
+			"UnauthRoleArn": "arn:aws:iam::781155362072:role/blog-20190130130837-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::781155362072:role/blog-20190130130837-authRole",
+			"Region": "us-east-1",
+			"DeploymentBucketName": "blog-20190130130837-deployment",
+			"UnauthRoleName": "blog-20190130130837-unauthRole",
+			"StackName": "blog-20190130130837",
+			"StackId": "arn:aws:cloudformation:us-east-1:781155362072:stack/blog-20190130130837/112efd80-24ba-11e9-9f30-0e0a24f9b5c2"
+		}
+	},
+	"auth": {
+		"cognito323263d5": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/blog-20190130130837-deployment/amplify-cfn-templates/auth/cognito323263d5-cloudformation-template.yml",
+				"logicalId": "authcognito323263d5"
+			},
+			"lastPushTimeStamp": "2019-02-01T01:27:00.876Z",
+			"output": {
+				"AppClientSecret": "1q6uoaevo3h53scp1lqjv2b2hl3etkgc15jhnrhull8luv9n358m",
+				"UserPoolId": "us-east-1_p1w7z4JM5",
+				"AppClientIDWeb": "17b92ohddjpa1perdqmetqi6op",
+				"AppClientID": "37ourb39fmb1gfoqonsm2tah8b",
+				"IdentityPoolId": "us-east-1:1a3ddfef-e915-4caa-92ee-2f9fe38caf7f",
+				"IdentityPoolName": "cognito323263d5_identitypool_323263d5",
+				"UserPoolName": "cognito323263d5_userpool_323263d5"
+			},
+			"lastPushDirHash": "NtJ1f6zdJGgMLwGvlkRq/fHqdZw="
+		}
+	},
+	"api": {
+		"amplifygatsbyexample": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"securityType": "AMAZON_COGNITO_USER_POOLS",
+				"GraphQLAPIIdOutput": "hd4qittytnghrg5nkhrjq4tbxq",
+				"GraphQLAPIEndpointOutput": "https://hgno7he6gjerhgdkzgucve63kq.appsync-api.us-east-1.amazonaws.com/graphql",
+				"GraphQLAPIKeyOutput": "da2-rbq3bfj5tvgdhhrzr6m6q6unp4",
+				"AuthCognitoUserPoolIdOutput": "us-east-1_p1w7z4JM5",
+				"AuthCognitoUserPoolNativeClientId": "See UserPool: us-east-1_p1w7z4JM5",
+				"AuthCognitoUserPoolJSClientId": "See UserPool: us-east-1_p1w7z4JM5"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/blog-20190130130837-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apiamplifygatsbyexample"
+			},
+			"lastPushTimeStamp": "2019-02-01T01:27:03.030Z",
+			"lastPushDirHash": "AYRqkoy1hJX4Q/7287gMITXEcYw="
+		}
+	}
+}
