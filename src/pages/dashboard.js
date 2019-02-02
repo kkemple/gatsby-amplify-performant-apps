@@ -16,14 +16,13 @@ const Dashboard = props => (
 
         return listPostLikes.items.length ? (
           listPostLikes.items.map(item => {
-            const { node: post } = props.data.allFile.edges.find(
-              ({ node }) =>
-                node.childMarkdownRemark.frontmatter.id === item.postId
+            const { node: post } = props.data.allMarkdownRemark.edges.find(
+              ({ node }) => node.frontmatter.id === item.postId
             )
             return post ? (
               <h3 key={post.id}>
                 <Link to={`/${post.fields.slug}`}>
-                  {post.childMarkdownRemark.frontmatter.title}
+                  {post.frontmatter.title}
                 </Link>
               </h3>
             ) : null
@@ -40,18 +39,16 @@ export default withAuthenticator(Dashboard, true)
 
 export const query = graphql`
   {
-    allFile(filter: { extension: { eq: "md" } }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          name
+          excerpt
           fields {
             slug
           }
-          childMarkdownRemark {
-            frontmatter {
-              title
-              id
-            }
+          frontmatter {
+            id
+            title
           }
         }
       }
