@@ -22,7 +22,7 @@ const Dashboard = props => (
             )
             return post ? (
               <h3 key={post.id}>
-                <Link to={`/${post.childMarkdownRemark.frontmatter.slug}`}>
+                <Link to={`/${post.fields.slug}`}>
                   {post.childMarkdownRemark.frontmatter.title}
                 </Link>
               </h3>
@@ -44,11 +44,13 @@ export const query = graphql`
       edges {
         node {
           name
+          fields {
+            slug
+          }
           childMarkdownRemark {
             frontmatter {
               title
               id
-              slug
             }
           }
         }

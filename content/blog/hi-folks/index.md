@@ -2,7 +2,6 @@
 title: New Beginnings
 date: '2015-05-28T22:40:32.169Z'
 id: 2
-slug: hi-folks
 ---
 
 Far far away, behind the word mountains, far from the countries Vokalia and
